@@ -1,0 +1,21 @@
+#logo {
+    float: left;
+    margin-right: 80px;
+
+}
+
+div.account-info {
+    align-content: center;
+}
+
+li {
+    float: left;
+    list-style-type: none;
+    padding: 10px;
+    font-size: 12px;
+    align-content: center;
+}
+
+#search-icon {
+    margin-left: 100px;
+}

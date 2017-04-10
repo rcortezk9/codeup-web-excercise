@@ -1,0 +1,64 @@
+header {
+    /* property: value */
+    background-color: black;
+}
+
+.top-navigation {
+    font-weight: bold;
+}
+
+nav.top-navigation a {
+    color: #8e949a;
+    text-decoration: none;
+}
+
+a:link {
+    color: palevioletred;
+}
+
+a:visited {
+    text-decoration: line-through;
+    color: red;
+}
+
+a:hover {
+    font-size: 30px;
+}
+
+
+a:active {
+    background-color: greenyellow;
+}
+
+.pill-nav {
+    border-style: solid;
+    border-color: #8e949a;
+    border-width: 1px;
+}
+
+/*which selector is more important
+
+1. IDs
+2. Classes
+3. Elements*/
+
+#current {
+    background-color: #0366D6;
+}
+
+/*#current>a {
+    color: #fff;
+}*/
+
+
+p > strong {
+    color: burlywood;
+}
+
+a { /* rules delimiter*/
+    color: #FFE641;
+}
+
+ul {
+    list-style: none;
+}

@@ -1,0 +1,44 @@
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 5px;
+    }
+
+    .hidden {
+        text-align: center;
+        padding: 10px;
+        background-color: aqua;
+        border: 1px black solid;
+        display: block;
+    }
+    header h1 {
+        text-align: center;
+        float: none;
+    }
+
+    header .nav-item {
+        display: block;
+        background-color: #aeaeae;
+        border: 1px black solid;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    header > nav {
+        float: none;
+        text-align: center;
+    }
+
+    #main-section {
+        width:100%;
+    }
+
+    #aside-section {
+        clear: both;
+        width: 100%;
+    }
+
+}
+/* will need better understand with other device sizes.*/
+/* as i decrease the size of the window have some over lapping of text */
+/* will overflow work? */

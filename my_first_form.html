@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Form</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+    <form action="http://requestb.in/1n79rxs1" method="POST">
+        <h2>User Login</h2>
+        <p>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="User Name">
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Password">
+        </p>
+        <h2>Compose an Email</h2>
+        <p>
+            <label for="to">To:</label>
+            <input id="to" name="to" type="text">
+            <br>
+            <label for="from">From:</label>
+            <input id="from" name="from" type="text">
+            <br>
+            <label for="subject">Subject:</label>
+            <input id="subject" name="subject" type="text">
+        </p>
+        <p>
+            <label for="body">Body</label>
+            <br>
+            <textarea id="body" name="body"	rows="5" cols="40"></textarea>
+            <br>
+            <input type="checkbox" id="send_copy" name="send_copy" value="yes" checked>
+            <label for="send_copy">Send copy to my inbox.</label>
+        </p>
+        <h2>Multiple Choice Test</h2>
+        <p>Which do you prefer Mac or PC?</p>
+        <label>
+            <input type="radio" name="q1" value="mac">
+            Mac
+        </label>
+        <label>
+            <input type="radio" name="q1" value="PC">
+            PC
+        </label>
+        <p>Which do you prefer?</p>
+        <label>
+            <input type="radio" name="q2" value="paper">
+            Paper
+        </label>
+        <label>
+            <input type="radio" name="q2" value="plastic">
+            Plastic
+        </label>
+        <p>What you like on your pizza?</p>
+        <label>
+            <input type="checkbox" name="pizza[]" value="cheese">
+            Cheese
+        </label>
+        <label>
+            <input type="checkbox" name="pizza[]" value="pepperoni">
+            Pepperoni
+        </label>
+        <label>
+            <input type="checkbox" name="pizza[]" value="sausage">
+            Sausage
+        </label>
+        <p>Select Testing</p>
+        <p>
+            <label for="sky_color">Is the sky blue?</label>
+            <select name="sky_color" id="sky_color">
+                <option value="0">Unsure</option>
+                <option value="1" selected>Yes</option>
+                <option value="2">No</option>
+            </select>
+        </p>
+        <p>
+            <button type="submit">Send</button>
+        </p>
+
+    </form>
+</body>
+</html>

@@ -1,6 +1,6 @@
 "use strict";
 
-var myNameIs = 'Bob'; // TODO: Fill in your name here.
+var myNameIs = 'René' // TODO: Fill in your name here.
 
 /**
  * TODO:
@@ -10,17 +10,21 @@ var myNameIs = 'Bob'; // TODO: Fill in your name here.
  * Example
  *  > sayHello("codeup") // returns "Hello, codeup!"
  */
-
+function sayHello(name) {
+    console.log("Hello, " + name + "!");
+}
 /**
  * TODO:
  * Call the function 'sayHello' passing the variable 'myNameIs' as a parameter.
  * Store the result of the function call in a variable named 'helloMessage'.
  * console.log 'helloMessage' to check your work
  */
-
+sayHello(myNameIs);
 // Don't modify the following line, it generates a random number between 1 and
 // 100 and stores it in a variable named random
 var random = Math.floor((Math.random()*100)+1);
+
+console.log("Random number is: " + random.toString());
 
 /**
  * TODO:
@@ -32,9 +36,12 @@ var random = Math.floor((Math.random()*100)+1);
  * Example
  *  > isOdd(42) // returns "42 is not odd!"
  */
-
+function isOdd(numberToTest) {
+    (numberToTest % 2 === 1) ? console.log("Number is odd.") : console.log("Number is even.");
+}
 /**
  * TODO:
  * Call the function 'isOdd' passing the variable 'random' as a parameter.
  * console.log *outside of the function* to check your work
  */
+isOdd(random);

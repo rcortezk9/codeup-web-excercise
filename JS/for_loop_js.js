@@ -7,7 +7,7 @@ var number = Math.floor(Math.random() * 10) + 1;
 
 
 for (i = 1; i <= 10; ++i) {
-    var total = number * 1;
+    var total = number * i;
     console.log(number + " x " + i + " = " + total);
 }
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    (function(){
+
+        var fruits = [];
+
+        fruits.push("Banana");
+        fruits.push("Apple");
+        fruits.push("Kiwi");
+        fruits.push("Coconut");
+        fruits.unshift("Watermelon");
+
+
+        for(var i = 0; i < 10; i++){
+            fruits.push("Fruits " + i);
+        }
+
+        // Delete the last element
+        fruits.pop();
+
+        // Delete the first element
+        fruits.shift();
+
+        // helps you to find an specific index
+        var looking = fruits.indexOf("Fruits 0");
+
+        console.log(looking);
+
+        console.log(fruits[looking]);
+
+        var removed = fruits.splice (fruits.length, 0, "grape", "blueberry");
+
+        console.log(removed);
+
+        //reverse the order of the fruits
+        //fruits.reverse();
+
+        // sort
+        fruits.sort();
+
+        fruits.forEach(function(el, i){
+            console.log(el + " index " + i);
+        });
+
+    })();
+</script>
+
+</body>
+</html>

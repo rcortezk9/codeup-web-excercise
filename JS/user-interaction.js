@@ -1,24 +1,42 @@
 "use strict";
 
 // TODO: Ask the user for their name.
-//       Keep asking if an empty input is provided.
+// Keep asking if an empty input is provided.
 
-var userName="";
+do {
+    var userName = prompt("What is your name?");
 
-while (userName === "") {
-    userName = prompt("What is your name?");
-}
+} while (userName === "");
+
+
+userName = (userName === null) ? "Guest" : userName;
+
 // TODO: Show an alert message that welcomes the user based on their input.
 
-alert("Greeting " + userName + "!");
+alert("Welcome " + userName + "!");
+
 
 // TODO: Ask the user if they like pizza.
 //       Based on their answer show a creative alert message.
 
-var response = confirm("Do you like pizza," + userName + "?");
+var theirReply = prompt("What pizza do you like?");
 
-if (response) {
-    alert("Awesome, I love pizza too!");
-} else {
-    alert("Its a shame you don't love pizza.");
+switch (theirReply.toLowerCase()) {
+    case "pepperoni":
+        alert("That's mine too!");
+        break;
+    case "cheese":
+        alert("Yuck.");
+        break;
+    case "veggie":
+        alert("Health nut, eh?");
+        break;
+    case "meat lovers":
+        alert("What a caveman!!");
+        break;
+    case "sausage":
+        alert("Hmmmm... I don't like that one.");
+        break;
+    default:
+        alert("Uhhhhh...as IF!");
 }

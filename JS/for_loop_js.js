@@ -20,7 +20,7 @@ console.log("Exercise 2...");
 
 
 for (var i = 1; i <= 10; ++i) {
-    var random = Math.floor(Math.random() * (200 - 20 + 1)) + 20;
+    var random = Math.floor(Math.random() * (200 - 20 + 1)) + 20; //was googled
     if (random % 2) {
         console.log(random + " is odd.");
     } else {

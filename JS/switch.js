@@ -3,7 +3,7 @@
  */
 "use strict";
 
-var luckyNumber = Math.floor(Math.random()* 6)
+var luckyNumber = Math.floor(Math.random()* 6);
 var cost = 60;
 var total;
 

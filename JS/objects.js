@@ -24,7 +24,7 @@
         firstName: 'Rene',
         lastName: 'Cortez',
         sayHello: function () {
-            console.log('Hello from ' + person.firstName + ' ' + person.lastName)
+            console.log('Hello from ' + this.firstName + ' ' + this.lastName + '!')
         }
     };
 
@@ -50,19 +50,24 @@
         {name: 'George', amount: 320},
 
     ];
-    var discountRate = .35;
 
-    shoppers.forEach(function(element){
-        var finalAmount = 0;
-        if (element.amount > 200) {
-            finalAmount = (element.amount * discountRate) - element.amount;
+    shoppers.forEach(function(shopper, index){
+        var discountRate = .35;
+        var totalDollarsPaid = 0;
+        var discountBreakingPointDollar = 200;
+        var outPutMessage = "";
+        if (shopper.amount > discountBreakingPointDollar) {
+            totalDollarsPaid = shopper.amount - (shopper.amount * discountRate) ;
         } else {
-            finalAmount = element.amount;
+            totalDollarsPaid = shopper.amount;
         }
 
-        console.log(element.name + 'bought $' + element.amount + ' worth and paid $' + finalAmount);
-        // display the name of the person, the amount before the discount,
-        // and if any the amount after the discount.
+        outPutMessage += shopper.name + " bought " + "$" + shopper.amount + " worth of products.";
+        outPutMessage += " Final payment: " + "$";
+        outPutMessage += (Math.round(totalDollarsPaid * 100) / 100).toFixed(2) + ".";
+
+        console.log('----CUSTOMER----' + (index + 1) + "----");
+        console.log(outPutMessage);
     })
 
 })();

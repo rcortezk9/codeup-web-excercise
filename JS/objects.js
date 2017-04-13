@@ -1,69 +1,68 @@
-/**
- * Created by renecortez on 4/13/17.
- */
-"use strict";
+(function(){
+    "use strict";
 
-// 2. what are objects?
-//    - key - value pairs
-// 3. object literal
+    /**
+     * TODO:
+     * Create person object, store it in a variable named person
+     */
+    /**
+     * TODO:
+     * Create firstName and lastName properties in your person object, and
+     * assign your name to them
+     */
+    /**
+     * TODO:
+     * Add a sayHello method to the person object that returns a greeting using
+     * the firstName and lastName properties.
+     * console.log the returned message to check your work
+     *
+     * Example
+     * person.sayHello() // returns "Hello from Rick Sanchez!"
+     */
 
-// curly braces, {}, are used to create an object
-// var pizza = {
-//     price: 9.99,
-//     isDelivery: true,
-//     toppings: ['pepperoni', 'green peppers', 'mushrooms', 'olives'],
-//     getPrice: function() {
-//         if (this.isDelivery) {
-//             return this.price + 4.99;
-//         }
-//         return this.price;
-//     }
-// };
+    var person = {
+        firstName: 'Rene',
+        lastName: 'Cortez',
+        sayHello: function () {
+            console.log('Hello from ' + person.firstName + ' ' + person.lastName)
+        }
+    };
 
-// creating the same object as above, but with different syntax
-// start out with an empty object
-// console.log("The price of the pizza is: " + pizza.price);
+    person.sayHello();
 
-// 4. add a getPrice method
+    /** TODO: Remember this problem from before?
+     *
+     * HEB has an offer for the shoppers that buy products amounting to more
+     * than $200. Write a JS program, using conditionals, that logs to the
+     * browser, how much does Ryan, Cameron and George need to pay. We know that
+     * Cameron bought $180, Ryan $250 and George $320. Your program will have to
+     * display a line with the name of the person, the amount before the
+     * discount, the discount, if any, and the amount after the discount.
+     *
+     * Uncomment the lines below to create an array of objects where each object
+     * represents one shopper. Use a foreach loop to iterate through the array,
+     * and console.log the relevant messages for each person
+     */
 
-// 5. accessing object properties, getting and setting
-//    - . notation
-//    - [notation]
-// 6. arrays of objects
-//    - more pizzas
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320},
 
-var pizzas = [
-    {
-        price: 9.99,
-        isDelivery: true,
-        toppings: ['pepperoni', 'green peppers', 'mushrooms', 'olives']
-    }, {
-        price: 8.99,
-        isDelivery: true,
-        toppings: ['pepperoni', 'bacon']
-    }, {
-        price: 12.99,
-        isDelivery: false,
-        toppings: ['olives']
-    }, {
-        price: 13.99,
-        isDelivery: false,
-        toppings: ['pineapple', 'ham']
-    }, {
-        price: 9.99,
-        isDelivery: true,
-        toppings: ['extra cheese']
-    }
-];
+    ];
+    var discountRate = .35;
 
-// display pizzas for delivery
-pizzas.forEach(function(pizza){
-    if (! pizza.isDelivery) {
-        return;
-    }
-    console.log('---------------------------------------------------');
-    console.log("Price: " + pizza.price);
-    console.log("Toppings: " + pizza.toppings.join(", "));
-});
+    shoppers.forEach(function(element){
+        var finalAmount = 0;
+        if (element.amount > 200) {
+            finalAmount = (element.amount * discountRate) - element.amount;
+        } else {
+            finalAmount = element.amount;
+        }
 
+        console.log(element.name + 'bought $' + element.amount + ' worth and paid $' + finalAmount);
+        // display the name of the person, the amount before the discount,
+        // and if any the amount after the discount.
+    })
 
+})();

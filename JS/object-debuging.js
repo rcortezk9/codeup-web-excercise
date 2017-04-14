@@ -84,7 +84,7 @@ for (var index = 0; index < orders.length; index += 1) {  // it should always be
     console.log('--- Order # ' + orderNumber + ' ---');
     console.log('Toppings');
     // output all the toppings for the order
-    order.toppings.forEach(function (topping) {
+    order.toppings.forEach(function (topping) {  //output of the nested array
         console.log('- ' + topping);
     });
 

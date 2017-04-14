@@ -78,34 +78,19 @@
         var books = [
             {
                 title: 'Happy',
-                author: {
-                    firstName: 'Marcia',
-                    lastName: 'Leonard'
-                }
+                author: {firstName: 'Marcia', lastName: 'Leonard'}
             }, {
                 title: 'The Paper Play House',
-                author: {
-                    firstName: 'Katrina',
-                    lastName: 'Rodabaugh'
-                }
+                author: {firstName: 'Katrina', lastName: 'Rodabaugh'}
             }, {
                 title: 'Eat like a dinosaur',
-                author: {
-                    firstName: 'Parent',
-                    lastName: 'Paleo'
-                }
+                author: {firstName: 'Parent', lastName: 'Paleo'}
             }, {
                 title: 'Ava Place',
-                author: {
-                    firstName: 'Emily',
-                    lastName: 'Cogburn'
-                }
+                author: {firstName: 'Emily', lastName: 'Cogburn'}
             }, {
                 title: 'Good as gone',
-                author: {
-                    firstName: 'Larry',
-                    lastName: 'Watson'
-                }
+                author: {firstName: 'Larry', lastName: 'Watson'}
             }
         ];
     // log out the books array
@@ -114,10 +99,11 @@
     // todo:
     // Loop through the array of books using .forEach and print out the specified information about each one.
     // start loop here
-        books.forEach(function(book) {
-        console.log("Book #" + books.length);
-        console.log("Title: " + book.title);
-        console.log("Author: " + books.author.firstName + ' ' + books.author.lastName);
-        console.log("---");
-    });
+        books.forEach(function(book, index) {  //since we used the books. the subsequent will use the book with out the s
+
+            console.log("Book #" + index); //add the index to the argument so it could be use with in console.
+            console.log("Title: " + book.title);
+            console.log("Author: " + book.author.firstName + ' ' + book.author.lastName);  // remember the cat
+            console.log("---");
+        });
 })();

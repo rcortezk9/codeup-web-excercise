@@ -101,7 +101,7 @@
     // start loop here
         books.forEach(function(book, index) {  //since we used the books. the subsequent will use the book with out the s
 
-            console.log("Book #" + index); //add the index to the argument so it could be use with in console.
+            console.log("Book #" + (index + 1)); //add the index to the argument so it could be use with in console. also adding a + 1 will start the list at 1 and not 0
             console.log("Title: " + book.title);
             console.log("Author: " + book.author.firstName + ' ' + book.author.lastName);  // remember the cat
             console.log("---");

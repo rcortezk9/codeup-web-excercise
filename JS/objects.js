@@ -69,5 +69,55 @@
         console.log('----CUSTOMER----' + (index + 1) + "----");
         console.log(outPutMessage);
     })
+        // todo:
+    // Create an array of objects that represent books.
+    // Each book should have a title and an author property.
+    // The author property should be an object with a firstName and lastName.
+    // Be creative and add at least 5 books to the array
+    // var books = [todo];
+        var books = [
+            {
+                title: 'Happy',
+                author: {
+                    firstName: 'Marcia',
+                    lastName: 'Leonard'
+                }
+            }, {
+                title: 'The Paper Play House',
+                author: {
+                    firstName: 'Katrina',
+                    lastName: 'Rodabaugh'
+                }
+            }, {
+                title: 'Eat like a dinosaur',
+                author: {
+                    firstName: 'Parent',
+                    lastName: 'Paleo'
+                }
+            }, {
+                title: 'Ava Place',
+                author: {
+                    firstName: 'Emily',
+                    lastName: 'Cogburn'
+                }
+            }, {
+                title: 'Good as gone',
+                author: {
+                    firstName: 'Larry',
+                    lastName: 'Watson'
+                }
+            }
+        ];
+    // log out the books array
+        console.log(books);
 
+    // todo:
+    // Loop through the array of books using .forEach and print out the specified information about each one.
+    // start loop here
+        books.forEach(function(book) {
+        console.log("Book #" + books.length);
+        console.log("Title: " + book.title);
+        console.log("Author: " + books.author.firstName + ' ' + books.author.lastName);
+        console.log("---");
+    });
 })();

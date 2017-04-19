@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My house</title>
+        <style type="text/css">
+            #map-canvas {
+                width: 500px;
+                height: 500px;
+            }
+        </style>
+</head>
+<body>
+    <div id="map-canvas"></div>
+
+    <label for="lat">Lat:</label>
+    <input type="Text" id="lat" value="29.426791">
+
+    <label for="long">Long:</label>
+    <input type="Text" id="long" value="-98.489602">
+
+    <label for="zoom">zoom:</label>
+    <input type="hidden" id="zoom" value="10">
+
+    <button id="in">+</button>
+    <button id="out">-</button>
+
+
+    <button id="update">Update map</button>
+
+
+    <script type="application/javascript">
+        (function() {
+            "use strict";
+
+            var update = document.getElementById("update");
+            var lat = parsefloat(document.getElementById('lat').value);
+            var long = parsefloat(document.getElementById('long').value);
+            var zoomVal = parseInt(document.getElementById('zoom').value;
+            var zoomIn = document.getElementById('in');
+            var zoomOut = document.getElementById('out');
+            var map = new google.maps.Map(document.getElementById("map-canvas"), null);
+            var geocoder = new google.maps.Geocoder();
+            var codeup = { lat: 29.426791, lng: -98.489602 };
+            var infowindow = new google.maps.InfoWindow({
+                content: "Changing the world, one programmer at a time."
+            });
+
+
+
+            var mapOptions = {
+                zoom: zoomVal,
+                center: {
+                    lat: lat,
+                    lng: long
+                },
+
+                disableDefaultUI: true
+
+            };
+
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
+
+            var marker = new google.maps.Marker({
+                position: codeup,
+                map: map
+            });
+
+            infowindow.open(map, marker);
+
+        })();
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe0814nG-IxIgG0VMjMJ6jmU1__W1TFGQ"></script>
+</body>
+</html>

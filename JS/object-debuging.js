@@ -77,7 +77,7 @@ for (var index = 0; index < orders.length; index += 1) {  // it should always be
         continue;
     }
 
-    var orderNumber = index + 1;
+    var orderNumber = index + 1; //to start at 1 and not 0
     var formattedPrice = '$' + (order.price / 100).toFixed(2);
 
     // output the order number

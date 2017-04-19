@@ -1,6 +1,6 @@
 "use strict";
 
-var myNameIs = 'René' // TODO: Fill in your name here.
+var myNameIs = 'René';// TODO: Fill in your name here.
 
 /**
  * TODO:

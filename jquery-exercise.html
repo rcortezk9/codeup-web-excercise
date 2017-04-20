@@ -13,7 +13,13 @@
     <li class="items">List item #3</li>
 </ul>
 
-<p id="paragraph    ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, ullam, ut.</p>
+<ul id="instructors">
+    <li class="codeup">Fer</li>
+    <li class="codeup">Justin</li>
+    <li>Luis</li>
+</ul>
+
+<p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, ullam, ut.</p>
 
 <div></div>
 
@@ -27,8 +33,10 @@
 
     $(document).ready(function () {
 
-        var contents = $('#hello').html();
-        alert(contents);
+//        var contents = $('#hello').html();
+//        alert(contents);
+
+        $('.codeup').css('border', '1px solid red');
 
     })
 </script>

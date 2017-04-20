@@ -38,12 +38,28 @@
 
 //        $('.codeup').css('border', '1px solid red');
 
-        $('.items, .codeup').css('font-size', '20px');
+//        $('.items, .codeup').css('font-size', '20px');
+//
+//        $('h1, li, p').css('background-color', '#FF0');
+//
+//        var contents = $('h1').html();
+//        alert(contents);
+        $('#hello').click(function(){
+           $(this).css('background-color', 'yellow');
+        });
 
-        $('h1, li, p').css('background-color', '#FF0');
+        $('#paragraph').dblclick(function(){
+            $(this).css('font-size', '18px');
+        });
 
-        var contents = $('h1').html();
-        alert(contents);
+        $('li').hover(function() {
+            $(this).css('color', 'red');
+            },
+            function () {
+                $(this).css('color', 'black');
+            }
+
+        );
 
     })
 </script>

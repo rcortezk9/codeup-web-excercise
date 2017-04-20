@@ -16,7 +16,7 @@
 <ul id="instructors">
     <li class="codeup">Fer</li>
     <li class="codeup">Justin</li>
-    <li>Luis</li>
+    <li class="codeup">Luis</li>
 </ul>
 
 <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, ullam, ut.</p>
@@ -36,7 +36,14 @@
 //        var contents = $('#hello').html();
 //        alert(contents);
 
-        $('.codeup').css('border', '1px solid red');
+//        $('.codeup').css('border', '1px solid red');
+
+        $('.items, .codeup').css('font-size', '20px');
+
+        $('h1, li, p').css('background-color', '#FF0');
+
+        var contents = $('h1').html();
+        alert(contents);
 
     })
 </script>

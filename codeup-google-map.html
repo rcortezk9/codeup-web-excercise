@@ -34,19 +34,17 @@
             "use strict";
 
             var update = document.getElementById("update");
-            var lat = parsefloat(document.getElementById('lat').value);
-            var long = parsefloat(document.getElementById('long').value);
+            var lat = parseFloat(document.getElementById('lat').value);
+            var long = parseFloat(document.getElementById('long').value);
             var zoomVal = parseInt(document.getElementById('zoom').value;
             var zoomIn = document.getElementById('in');
             var zoomOut = document.getElementById('out');
             var map = new google.maps.Map(document.getElementById("map-canvas"), null);
             var geocoder = new google.maps.Geocoder();
-            var codeup = { lat: 29.426791, lng: -98.489602 };
+            var chabaThai = { lat: 29.3496796, lng: -98.4375308 };
             var infowindow = new google.maps.InfoWindow({
-                content: "Changing the world, one programmer at a time."
+                content: "For the best Thai food in SA."
             });
-
-
 
             var mapOptions = {
                 zoom: zoomVal,
@@ -64,7 +62,7 @@
             map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
 
             var marker = new google.maps.Marker({
-                position: codeup,
+                position: chabaThai,
                 map: map
             });
 

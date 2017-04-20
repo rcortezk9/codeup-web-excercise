@@ -34,19 +34,19 @@ if (avg > 80) {
 // }
 
 //the walk thru for the second exercise.
-var customer = "";
-var costDollars = null;
-var discountRate = .35;
-var totalSpentDollars = null;
+var customer = "";//to be declared later for console log
+var costDollars = null;//what was spent by customer after discount
+var discountRate = .35;//the discount if spent over 200
+var totalSpentDollars = null;//the condition to be compared
 
-var discountBreakPointDollars = 200;
-var cameronSpentDollars = 180;
-var ryanSpentDollars = 250;
-var georgeSpentDollars = 320;
+var discountBreakPointDollars = 200; // offer for client if spent more then
+var cameronSpentDollars = 180;//customer spent and before discount
+var ryanSpentDollars = 250;//customer spent and before discount
+var georgeSpentDollars = 320;//customer spent and before discount
 
-var cameron = "Cameron";
-var ryan = "Ryan";
-var george = "George";
+var cameron = "Cameron";//to be displayed customer name
+var ryan = "Ryan";//to be displayed customer name
+var george = "George";//to be displayed customer name
 
 customer = cameron;
 totalSpentDollars = cameronSpentDollars;

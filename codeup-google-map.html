@@ -1,75 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My house</title>
-        <style type="text/css">
-            #map-canvas {
-                width: 500px;
-                height: 500px;
-            }
-        </style>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        #map-display {
+            height: 500px;
+            width: 800px;
+        }
+
+    </style>
+
 </head>
 <body>
-    <div id="map-canvas"></div>
 
-    <label for="lat">Lat:</label>
-    <input type="Text" id="lat" value="29.426791">
-
-    <label for="long">Long:</label>
-    <input type="Text" id="long" value="-98.489602">
-
-    <label for="zoom">zoom:</label>
-    <input type="hidden" id="zoom" value="10">
-
-    <button id="in">+</button>
-    <button id="out">-</button>
+<h1>Google Map</h1>
 
 
-    <button id="update">Update map</button>
+<div id="map-display"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIPbNd4ljI6NdSyP5ugk4XoKDzw2VEZM"></script>
+
+<script>
+
+    (function() {
+
+        "use strict";
+
+        // create global info window variable for closing the window
+
+        var currentInfoWindow = null;
+
+        // ===========================DRAWING MAP===========================
 
 
-    <script type="application/javascript">
-        (function() {
-            "use strict";
+        var mapOptions = {
+            zoom: 10,
+            center: {
+                lat: 29.42569,
+                lng: -98.48503
+            },
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
 
-            var update = document.getElementById("update");
-            var lat = parseFloat(document.getElementById('lat').value);
-            var long = parseFloat(document.getElementById('long').value);
-            var zoomVal = parseInt(document.getElementById('zoom').value;
-            var zoomIn = document.getElementById('in');
-            var zoomOut = document.getElementById('out');
-            var map = new google.maps.Map(document.getElementById("map-canvas"), null);
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-display"), mapOptions);
+
+
+
+
+
+
+        // ===========================LOOPING THROUGH RESTAURANTS===========================
+
+//        // single entry object
+//        var goodEats = {
+//            name: "Chama Gaucho",
+//            address: "18318 Sonterra Pl, San Antonio, TX 78258",
+//            info: "<h3>Chama Gaucho</h3>The best steak period!"
+//        };
+//
+//        // test the entry
+//        markIt(goodEats);
+//
+//
+        // many entries
+        var restaurants = [
+
+            {
+                name: "Chama Gaucho",
+                address: "18318 Sonterra Pl, San Antonio, TX 78258",
+                info: "<h3>Chama Gaucho</h3>The best steak period!"
+            },
+            {
+                name: "Supper",
+                address: "136 E Grayson St, San Antonio, TX 78215",
+                info: "<h3>Supper</h3>The best supper period!"
+            },
+            {
+                name: "Whiskey Cake",
+                address: "The Shops At La Cantera, 15900 Via La Cantera #21200, San Antonio, TX 78256",
+                info: "<h3>Whiskey Cake</h3>The best cake period!"
+            }
+
+        ];
+
+
+
+
+        // loop through array of JS objects and pass in each object to marker function
+
+        restaurants.forEach(function(restaurant){
+            markIt(restaurant);
+        });
+
+
+
+        // ===========================FUNCTION to GEOCODE and CREATE MARKER===========================
+
+        function markIt(someObject) {
             var geocoder = new google.maps.Geocoder();
-            var chabaThai = { lat: 29.3496796, lng: -98.4375308 };
-            var infowindow = new google.maps.InfoWindow({
-                content: "For the best Thai food in SA."
-            });
 
-            var mapOptions = {
-                zoom: zoomVal,
-                center: {
-                    lat: lat,
-                    lng: long
-                },
+            geocoder.geocode({address: someObject.address}, function(results, status) {
 
-                disableDefaultUI: true
+                if (status === "OK") {
+                    var coordinates = {};
+                    coordinates.lat = results[0].geometry.location.lat();
+                    coordinates.lng = results[0].geometry.location.lng();
 
-            };
+                    addAMarker(coordinates, someObject);
 
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                }
 
-            map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
+            }) ;
+
+        }
+
+
+
+
+        // ===========================FUNCTION to ADD MARKERS===========================
+
+        function addAMarker(position, someObject) {
 
             var marker = new google.maps.Marker({
-                position: chabaThai,
+                position: position,
+                animation: google.maps.Animation.DROP,
+                icon: "food.png",
                 map: map
             });
 
-            infowindow.open(map, marker);
+            var infowindow = new google.maps.InfoWindow({
+                content: someObject.info
+            });
 
-        })();
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe0814nG-IxIgG0VMjMJ6jmU1__W1TFGQ"></script>
+            marker.addListener("click", function() {
+                if (currentInfoWindow) {
+                    currentInfoWindow.close();
+                }
+                infowindow.open(map, marker);
+                map.setCenter(marker.position);
+                currentInfoWindow = infowindow;
+
+            });
+
+        }
+
+
+
+        // initialize the map
+
+
+    })();
+</script>
 </body>
 </html>

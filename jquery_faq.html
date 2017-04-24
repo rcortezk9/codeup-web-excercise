@@ -70,7 +70,13 @@
 
             $("#expand").click(function(event){
                 event.preventDefault();
-                $('dd').toggleClass('invisible');//$(selecter-html).toggleClass(class-style) is another way to think about it
+                $('dd').toggleClass('invisible');//$(selecter-html).toggleClass(class-style just the name) is another way to think about it
+
+//                if(!$('dd').hasClass('invisible')){
+//                    $(this).text("Expand");
+//                } else {
+//                    $(this).text("Collapse");
+//                }
             });
 
         })

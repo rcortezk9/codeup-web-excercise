@@ -31,7 +31,12 @@
     </style>
 </head>
 <body>
+
     <div class="container">
+
+    <div class="header">
+        <h1>Would you lik to sign up for our newsletter? <span id="hideDiv">x</span></h1>
+    </div>
 
         <dl class="national-parks">
             <dt>How did Yellowstone get its name?
@@ -122,6 +127,13 @@
             $('li').click(function(){
                 $(this).parent().children().first().css('color', 'blue');//start is li so need to move up then move down to select in which order.
             });
+
+            //click on x to hide top div
+            $('#hideDiv').click(function() {
+                $('.header').hide();
+            });
+
+            //
         })
 
     </script>

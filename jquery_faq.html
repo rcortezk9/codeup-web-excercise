@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery FAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <style>
         .container {
             margin-left: 100px;
@@ -29,80 +32,92 @@
             padding-bottom: 8px;
         }
 
-        /*hide li's'*/
-        .list {
-            display: none;
-        }
-
-        #register-for-site {
-            display: none;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
 
-    <div class="header">
-        <h1>Would you like to sign up for our newsletter? <span id="hideDiv">x</span></h1>
-    </div>
+        <div class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
-    <div>
-        <h2 id="register-for-site">Register for our website!</h2>
-    </div>
+        <div class="header">
+            <h1>Would you like to sign up for our newsletter? <span>x</span></h1>
+        </div>
 
-        <dl class="national-parks">
-            <dt>How did Yellowstone get its name?
-            <dd class="invisible">Yellowstone National Park is named after the Yellowstone River, the major river running through the park</dd>
-            <dt>Is Yellowstone the largest national park?
-            <dd class="invisible">No. More than half of Alaska’s national park units are larger, including Wrangell–St. Elias National Park and Preserve, which is the largest unit (13 million acres) in the National Park System.</dd>
-            <dt>Is Yellowstone the most visited national park?
-            <dd class="invisible">Yellowstone is in the top five national parks for number of recreational visitors. Great Smoky Mountains National Park often has the most. </dd>
-            <dt>What is the difference between a national park and a national forest?
-            <dd class="invisible">National parks are administered by the Department of the Interior and national forests by the Department of Agriculture. </dd>
-            <dt>How many rangers work in Yellowstone?
-            <dd class="invisible">Approximately 773 people work for the National Park Service during the peak summer season. Approximately 330 are permanent, year-round employees.</dd>
-            <dt>How do you become a park ranger?
-            <dd class="invisible">Many National Park Service employees begin their careers as volunteers or as seasonal employees.</dd>
-            <dt>Can we swim in rivers and lakes?
-            <dd class="invisible">Swimming is not recommended because most lakes and streams are dangerously cold.</dd>
-            <dt>What is the highest peak in the park?
-            <dd class="invisible">Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>
-            <dt>Why is Yellowstone called a biosphere reserve and a world heritage site?
-            <dd class="invisible">The United Nations designated Yellowstone National Park as a biosphere reserve and a world heritage site in recognition of the worldwide significance of its natural and cultural resources.</dd>
-            <dt>What is the Continental Divide?
-            <dd class="invisible">Think of the Continental Divide as the crest of the continent. Theoretically, when precipitation falls on the west side of the Divide, it eventually reaches the Pacific Ocean.</dd>
-        </dl>
+        <!--<div>-->
+            <!--<h2 id="register-for-site">Register for our website!</h2>-->
+        <!--</div>-->
 
-        <a href="#" id="expand">Expand.</a>
+            <dl class="national-parks">
+                <dt>How did Yellowstone get its name?
+                <dd class="invisible">Yellowstone National Park is named after the Yellowstone River, the major river running through the park</dd>
+                <dt>Is Yellowstone the largest national park?
+                <dd class="invisible">No. More than half of Alaska’s national park units are larger, including Wrangell–St. Elias National Park and Preserve, which is the largest unit (13 million acres) in the National Park System.</dd>
+                <dt>Is Yellowstone the most visited national park?
+                <dd class="invisible">Yellowstone is in the top five national parks for number of recreational visitors. Great Smoky Mountains National Park often has the most. </dd>
+                <dt>What is the difference between a national park and a national forest?
+                <dd class="invisible">National parks are administered by the Department of the Interior and national forests by the Department of Agriculture. </dd>
+                <dt>How many rangers work in Yellowstone?
+                <dd class="invisible">Approximately 773 people work for the National Park Service during the peak summer season. Approximately 330 are permanent, year-round employees.</dd>
+                <dt>How do you become a park ranger?
+                <dd class="invisible">Many National Park Service employees begin their careers as volunteers or as seasonal employees.</dd>
+                <dt>Can we swim in rivers and lakes?
+                <dd class="invisible">Swimming is not recommended because most lakes and streams are dangerously cold.</dd>
+                <dt>What is the highest peak in the park?
+                <dd class="invisible">Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>
+                <dt>Why is Yellowstone called a biosphere reserve and a world heritage site?
+                <dd class="invisible">The United Nations designated Yellowstone National Park as a biosphere reserve and a world heritage site in recognition of the worldwide significance of its natural and cultural resources.</dd>
+                <dt>What is the Continental Divide?
+                <dd class="invisible">Think of the Continental Divide as the crest of the continent. Theoretically, when precipitation falls on the west side of the Divide, it eventually reaches the Pacific Ocean.</dd>
+            </dl>
 
-        <h3>Big Bend</h3>
-            <ul class="list">
-                <li>Langford Hot Springs near the park's Rio Grande was formed by volcanic activity is about 105 degrees Fahrenheit.</li>
-                <li>The Chisos Mountains were formed nearly 35 millions years ago after volcanic activity spewed layers of ash and molten rock squeezed up through the ground.</li>
-                <li>The park's Castolon Historic District once housed a U.S. Army camp. There are still adobe buildings and artifacts from that time.</li>
-            </ul>
+            <a href="#" id="expand">Expand.</a>
 
-        <h3>Choke Canyon</h3>
-            <ul class="list">
-                <li>Choke Canyon State Park, consisting of two units, South Shore and Calliham, is located on the 26,000-acre Choke Canyon Reservoir, a water supply for Corpus Christi. </li>
-                <li>The park was acquired in 1981 in a 50-year cooperative agreement between the Bureau of Reclamation, the city of Corpus Christi and the Nueces River Authority.</li>
-                <li>The Calliham Unit, containing 1,100 acres in McMullen County, was opened to the public on Aug. 21, 1987. The South Shore Unit contains 385 acres in Live Oak County and was opened to the public on March 5, 1986.</li>
-            </ul>
+            <h3>Big Bend</h3>
+                <ul class="list">
+                    <li>Langford Hot Springs near the park's Rio Grande was formed by volcanic activity is about 105 degrees Fahrenheit.</li>
+                    <li>The Chisos Mountains were formed nearly 35 millions years ago after volcanic activity spewed layers of ash and molten rock squeezed up through the ground.</li>
+                    <li>The park's Castolon Historic District once housed a U.S. Army camp. There are still adobe buildings and artifacts from that time.</li>
+                </ul>
 
-        <h3>Enchanted Rock</h3>
-            <ul class="list">
-                <li>Hiking Enchanted Rock is like climbing the stairs of a 30- or 40-story building</li>
-                <li>As big as the dome seems, its base is even bigger... much bigger</li>
-                <li>The Texas State Capitol was built from the same stone that makes up Enchanted Rock</li>
-            </ul>
+            <h3>Choke Canyon</h3>
+                <ul class="list">
+                    <li>Choke Canyon State Park, consisting of two units, South Shore and Calliham, is located on the 26,000-acre Choke Canyon Reservoir, a water supply for Corpus Christi. </li>
+                    <li>The park was acquired in 1981 in a 50-year cooperative agreement between the Bureau of Reclamation, the city of Corpus Christi and the Nueces River Authority.</li>
+                    <li>The Calliham Unit, containing 1,100 acres in McMullen County, was opened to the public on Aug. 21, 1987. The South Shore Unit contains 385 acres in Live Oak County and was opened to the public on March 5, 1986.</li>
+                </ul>
 
-        <button class="last-list">Last item</button>
-    </div>
+            <h3>Enchanted Rock</h3>
+                <ul class="list">
+                    <li>Hiking Enchanted Rock is like climbing the stairs of a 30- or 40-story building</li>
+                    <li>As big as the dome seems, its base is even bigger... much bigger</li>
+                    <li>The Texas State Capitol was built from the same stone that makes up Enchanted Rock</li>
+                </ul>
+
+            <button class="last-list">Last item</button>
+        </div>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
         'use strict';
@@ -131,7 +146,7 @@
 
                 });
             });
-
+            //===============================traversal lesson===================================
             //make h3 font bold on click
             $('h3').click(function(){
                 $(this).next().css('font-weight', 'bold');//'this' and 'next()' point to what follow it in the html
@@ -142,9 +157,11 @@
                 $(this).parent().children().first().css('color', 'blue');//start is li so need to move up then move down to select in which order.
             });
 
+            //============================show, hide, and toggle lesson=========================
+
             //click on x to hide top div
-            $('#hideDiv').click(function() {
-                $('.header').hide();
+            $('span').click(function() {
+                $('this').parent().parent().hide();
             });
 
             //h3 clicked display of th ul should be toggled with a sliding effect
@@ -153,7 +170,11 @@
             });
 
             //After 8 sec an h2 should fade in asks the user to register for the site
-            $('#register-for-site').delay(8000).fadeIn();
+//            $('#register-for-site').hide().delay(8000).fadeIn();
+
+            //bonus: add bootstrap alert for dismissable message that shows on page load.
+
+            //bonus: bootstrap modal for message that fades after 8 sec
 
         })
 

@@ -28,6 +28,11 @@
             padding-top: 8px;
             padding-bottom: 8px;
         }
+
+        /*hide li's'*/
+        .list {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -110,6 +115,7 @@
             $('dt').click(function(){
                 $(this).css('background-color', 'yellow');
             });
+
             //highlight last li of each ul element
             $('.last-list').click(function(i, e){
                 $('ul').each(function(i, e){
@@ -133,7 +139,13 @@
                 $('.header').hide();
             });
 
-            //
+            //h3 clicked display of th ul should be toggled with a sliding effect
+            $('h3').click(function(){
+                $(this).next().slideToggle();
+            });
+
+            //After 8 sec an h2 should fade in asks the user to register for the site
+
         })
 
     </script>

@@ -33,6 +33,10 @@
         .list {
             display: none;
         }
+
+        #register-for-site {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -40,7 +44,11 @@
     <div class="container">
 
     <div class="header">
-        <h1>Would you lik to sign up for our newsletter? <span id="hideDiv">x</span></h1>
+        <h1>Would you like to sign up for our newsletter? <span id="hideDiv">x</span></h1>
+    </div>
+
+    <div>
+        <h2 id="register-for-site">Register for our website!</h2>
     </div>
 
         <dl class="national-parks">
@@ -145,6 +153,7 @@
             });
 
             //After 8 sec an h2 should fade in asks the user to register for the site
+            $('#register-for-site').delay(8000).fadeIn();
 
         })
 

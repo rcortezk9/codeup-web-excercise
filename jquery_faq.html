@@ -58,29 +58,27 @@
 
         <a href="#" id="expand">Expand.</a>
 
-        <ul>
-            <li><h3>Big Bend</h3>
-                <ul class="list">
-                    <li>Langford Hot Springs near the park's Rio Grande was formed by volcanic activity is about 105 degrees Fahrenheit.</li>
-                    <li>The Chisos Mountains were formed nearly 35 millions years ago after volcanic activity spewed layers of ash and molten rock squeezed up through the ground.</li>
-                    <li>The park's Castolon Historic District once housed a U.S. Army camp. There are still adobe buildings and artifacts from that time.</li>
-                </ul>
-            </li>
-            <li><h3>Choke Canyon</h3>
-                <ul class="list">
-                    <li>Choke Canyon State Park, consisting of two units, South Shore and Calliham, is located on the 26,000-acre Choke Canyon Reservoir, a water supply for Corpus Christi. </li>
-                    <li>The park was acquired in 1981 in a 50-year cooperative agreement between the Bureau of Reclamation, the city of Corpus Christi and the Nueces River Authority.</li>
-                    <li>The Calliham Unit, containing 1,100 acres in McMullen County, was opened to the public on Aug. 21, 1987. The South Shore Unit contains 385 acres in Live Oak County and was opened to the public on March 5, 1986.</li>
-                </ul>
-            </li>
-            <li><h3>Enchanted Rock</h3>
-                <ul class="list">
-                    <li>Hiking Enchanted Rock is like climbing the stairs of a 30- or 40-story building</li>
-                    <li>As big as the dome seems, its base is even bigger... much bigger</li>
-                    <li>The Texas State Capitol was built from the same stone that makes up Enchanted Rock</li>
-                </ul>
-            </li>
-        </ul>
+        <h3>Big Bend</h3>
+            <ul class="list">
+                <li>Langford Hot Springs near the park's Rio Grande was formed by volcanic activity is about 105 degrees Fahrenheit.</li>
+                <li>The Chisos Mountains were formed nearly 35 millions years ago after volcanic activity spewed layers of ash and molten rock squeezed up through the ground.</li>
+                <li>The park's Castolon Historic District once housed a U.S. Army camp. There are still adobe buildings and artifacts from that time.</li>
+            </ul>
+
+        <h3>Choke Canyon</h3>
+            <ul class="list">
+                <li>Choke Canyon State Park, consisting of two units, South Shore and Calliham, is located on the 26,000-acre Choke Canyon Reservoir, a water supply for Corpus Christi. </li>
+                <li>The park was acquired in 1981 in a 50-year cooperative agreement between the Bureau of Reclamation, the city of Corpus Christi and the Nueces River Authority.</li>
+                <li>The Calliham Unit, containing 1,100 acres in McMullen County, was opened to the public on Aug. 21, 1987. The South Shore Unit contains 385 acres in Live Oak County and was opened to the public on March 5, 1986.</li>
+            </ul>
+
+        <h3>Enchanted Rock</h3>
+            <ul class="list">
+                <li>Hiking Enchanted Rock is like climbing the stairs of a 30- or 40-story building</li>
+                <li>As big as the dome seems, its base is even bigger... much bigger</li>
+                <li>The Texas State Capitol was built from the same stone that makes up Enchanted Rock</li>
+            </ul>
+
         <button class="last-list">Last item</button>
     </div>
 
@@ -104,19 +102,26 @@
                 }
             });
 
-            $('.last-list').click(function(){
+            $('dt').click(function(){
+                $(this).css('background-color', 'yellow');
+            });
+            //highlight last li of each ul element
+            $('.last-list').click(function(i, e){
                 $('ul').each(function(i, e){
-                    $(e).children().last().css('background-color', 'yellow');
+                    $(this).children().last().css('background-color', 'yellow');//instead of using 'this' you can use element
 
                 });
             });
 
+            //make h3 font bold on click
             $('h3').click(function(){
-                $(this).each(function (i, e) {
-                    $('li').children().css('font-weight', 'bold');
-                })
+                $(this).next().css('font-weight', 'bold');//'this' and 'next()' point to what follow it in the html
             });
 
+            //make the first li turn blue when clicking an li
+            $('li').click(function(){
+                $(this).parent().children().first().css('color', 'blue');//start is li so need to move up then move down to select in which order.
+            });
         })
 
     </script>

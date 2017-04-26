@@ -38,27 +38,26 @@
 
     <div class="container">
 
-        <div class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+        <!--Bonus: adding model div-->
+
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="myModal">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>One fine body&hellip;</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3>Register on a our website.</h3>
+                </div>
+            </div>
+        </div>
 
         <div class="header">
-            <h1>Would you like to sign up for our newsletter? <span>x</span></h1>
+            <h1 id="heading">Would you like to sign up for our newsletter? <span id="hide">x</span></h1>
         </div>
+
+        <!--bonus: add bootstrap alert for dismissable message that shows on page load.-->
+        <!--<div class="alert alert-warning alert-dismissible" role="alert">-->
+            <!--<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+            <!--<strong>Don't forget!</strong> Please register for free socks.-->
+        <!--</div>-->
 
         <!--<div>-->
             <!--<h2 id="register-for-site">Register for our website!</h2>-->
@@ -160,8 +159,8 @@
             //============================show, hide, and toggle lesson=========================
 
             //click on x to hide top div
-            $('span').click(function() {
-                $('this').parent().parent().hide();
+            $('#hide').click(function() {
+                $('.header').hide();
             });
 
             //h3 clicked display of th ul should be toggled with a sliding effect
@@ -172,9 +171,8 @@
             //After 8 sec an h2 should fade in asks the user to register for the site
 //            $('#register-for-site').hide().delay(8000).fadeIn();
 
-            //bonus: add bootstrap alert for dismissable message that shows on page load.
-
             //bonus: bootstrap modal for message that fades after 8 sec
+            $('#myModal').modal('show').delay(3000).fadeIn();
 
         })
 

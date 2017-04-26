@@ -67,18 +67,15 @@
         // TODO: "Animate All" should use an animation stack to:
         $('#btn-all').click(function(){
             $('#animate-box').animate({
-                left: '100px',
+                left: '100px',        // 1) Move and scale the box simultaneously
                 width: '50%',
-                opacity: '0'
-            }, 3000).animate({
+                opacity: '0'          // 2) Hide the box
+            }, 3000).animate({        // 3) Reset the box back to its original position and opacity
                 opacity: '1',
                 width: "250px",
                 left: '-=100px'
             }, 3000);
         });
-        //      1) Move and scale the box simultaneously
-        //      2) Hide the box
-        //      3) Reset the box back to its original position and opacity
     });
     </script>
 </body>

@@ -1,0 +1,15 @@
+.container-fluid {
+    background-color: aqua;
+}
+
+
+.col-xs-4 {
+    background-color: lightgrey;
+    border: 1px solid black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#map-display {
+    margin-bottom: 20px;
+}

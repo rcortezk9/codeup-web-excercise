@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
@@ -9,14 +9,68 @@
 
 </head>
 <body>
+<div class="container-fluid">
+    <h1>Weather Application</h1>
+    <h2>Some Location</h2><!--will need to change with current location-->
+    <div class="row">
+        <div class="col-xs-4" id="day0"></div>
+        <div class="col-xs-4" id="day1"></div>
+        <div class="col-xs-4" id="day2"></div>
+    </div>
+</div>
 
+<div id="map-display" style="height: 400px;"></div>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe0814nG-IxIgG0VMjMJ6jmU1__W1TFGQ"></script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"integrity="sha256hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<script src="JS/weather-map.js"></script>
+<script>
+    $(document).ready(function(){
+        'use strict';
+
+
+        var mapOptions = {
+            zoom: 5,
+            center: {
+                lat: 29.42569,
+                lng: -98.48503
+            },
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-display"), mapOptions);
+
+
+        $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+            APPID: "55aec6780da8e9b516e2937ae17b58af",
+            q:     "San Antonio, TX",
+            units: "imperial",
+            cnt: 3
+        }).done(function(data) {
+            console.log(data);
+            data.list.forEach(function(element, index){
+//                console.log(element);
+
+                var content = "";
+
+                content += element.temp.max + '&deg;' + '/' + element.temp.min + '&deg;';
+                content += '<br><img src="http://openweathermap.org/img/w/' + element.weather[0].icon + '.png">';
+                content += '<br>Clouds:' + ' ' + element.weather[0].description;
+                content += '<br>Humidity:' + ' ' + element.humidity;
+                content += '<br>Wind:' + ' ' + element.speed + ' ' + 'mph/' + element.deg;
+                content += '<br>Pressure:' + ' ' + element.pressure;
+
+                $('#day' + index).append(content);
+
+            });
+        });
+
+    });
+</script>
 
 </body>
 </html>

@@ -1,21 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+
 body {
-    background-color: aqua;
+    background-color: #e0e0e0;
 }
 
 .row {
-    margin-right: 80px;
-    margin-left: 80px;
-    margin-bottom: 20px;
+    margin: 20px 80px 20px 80px;
 }
 
 .col-xs-4 {
     background-color: lightgrey;
     border: 1px solid black;
     text-align: center;
+    font-size: 16px;
+}
+
+p {
+    font-weight: bold;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+span {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+}
+
+h1 h2 {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#temp {
+    font-size: 25px;
+    font-weight: bold;
 }
 
 #map-display {
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-bottom: 80px;
+    margin: 20px 80px 80px 80px;
+}
+
+.glyphicon-search {
+    color: white;
 }

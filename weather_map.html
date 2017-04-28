@@ -9,6 +9,19 @@
 
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header navbar-right">
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Look Up</button>
+            </form>
+        </div>
+    </div>
+</nav>
 <div class="container-fluid">
     <h1>Weather Application</h1>
     <h2 id="cityName"></h2>
@@ -19,8 +32,6 @@
     </div>
     <div id="map-display" style="height: 400px;"></div>
 </div>
-
-
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe0814nG-IxIgG0VMjMJ6jmU1__W1TFGQ"></script>
 
@@ -53,6 +64,15 @@
             draggable: true
         });
 
+        // Function to convert output to title case
+        function titleCase(str) {
+            str = str.toLowerCase().split(' ');
+            for (var i = 0; i < str.length; i++) {
+                str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+            }
+            return str.join(' ');
+        }
+
         function getWeather(lat, lon) {
             $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
                 APPID: "55aec6780da8e9b516e2937ae17b58af",
@@ -61,18 +81,18 @@
                 units: "imperial",
                 cnt: 3
             }).done(function (data) {
-//            console.log(data);
+            console.log(data);
                 data.list.forEach(function (element, index) {
 //            console.log(element);
 
                     var content = "";
 
-                    content += element.temp.max + '&deg;' + '/' + element.temp.min + '&deg;';
+                    content += '<span id="temp">' + parseInt(element.temp.max) + '&deg;' + '/' + parseInt(element.temp.min) + '&deg;</span>';
                     content += '<br><img src="http://openweathermap.org/img/w/' + element.weather[0].icon + '.png">';
-                    content += '<br>Clouds:' + ' ' + element.weather[0].description;
-                    content += '<br>Humidity:' + ' ' + element.humidity;
-                    content += '<br>Wind:' + ' ' + element.speed + ' ' + 'mph/' + element.deg;
-                    content += '<br>Pressure:' + ' ' + element.pressure;
+                    content += '<br><span>Clouds:</span>' + ' ' + titleCase(element.weather[0].description);
+                    content += '<br><span>Humidity:</span>' + ' ' + element.humidity + '%';
+                    content += '<br><span>Wind:</span>' + ' ' + element.speed + ' ' + 'mph/' + element.deg + '&deg;';
+                    content += '<br><span>Pressure:</span>' + ' ' + element.pressure;
 
                     $('#day' + index).html(content);
 

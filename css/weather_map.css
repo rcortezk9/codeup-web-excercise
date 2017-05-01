@@ -7,31 +7,10 @@ body {
 .row {
     margin: 20px 80px 20px 80px;
 }
-.col-xs-6 {
+.col-xs-4 {
     text-align: center;
     border: 1px solid black;
     background-color: white;
-}
-
-#day0 {
-    margin: 0 67px 0 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 5%;
-}
-
-#day1 {
-    margin: 0 67px 0 67px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 5%;
-}
-
-#day2 {
-    margin: 0 0 0 67px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-radius: 5%;
 }
 
 p {

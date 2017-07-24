@@ -13,6 +13,9 @@ body {
     background-color: white;
 }
 
+.nav-item{
+    margin-left: 80px;
+}
 p {
     font-weight: bold;
     font-family: 'Open Sans Condensed', sans-serif;
